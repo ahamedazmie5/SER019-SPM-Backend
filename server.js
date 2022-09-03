@@ -35,3 +35,9 @@ mongoose.connect(
     console.log("Successfully Connected to MongoDB");
   }
 );
+
+//import routes
+const TourPackagesRouter = require("./routes/TourPackagesRoutes");
+
+//use routes
+app.use("/travelgo",TourPackagesRouter);
