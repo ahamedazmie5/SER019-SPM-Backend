@@ -38,6 +38,7 @@ mongoose.connect(
 
 //import routes
 const TourPackagesRouter = require("./routes/TourPackagesRoutes");
-
+const HotelPackagesRouter = require("./routes/HotelPackagesRoutes");
 //use routes
 app.use("/travelgo",TourPackagesRouter);
+app.use("/travelgo",HotelPackagesRouter);

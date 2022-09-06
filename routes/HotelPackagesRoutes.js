@@ -8,3 +8,5 @@ router.get("/getHotelPackages/:id",getHotelPackagesByID);
 router.patch("/updateHotelPackages/:id",UpdateHotelPackages);
 
 module.exports = router;
+
+
