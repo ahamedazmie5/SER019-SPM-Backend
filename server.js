@@ -59,8 +59,8 @@ app.use("/travelgo",TourPackagesRouter);
 app.use("/travelgo/user",UserRoutes);
 
 
-const TourPackagesRouter = require('./routes/TourPackagesRoutes');
-const UserRoutes = require('./routes/UserRoutes');
+
+
 const BlogsRouter = require('./routes/blogsRouter');
 
 //use routes
