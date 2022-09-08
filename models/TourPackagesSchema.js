@@ -14,6 +14,9 @@ const TourPackagesSchema = new mongoose.Schema({
 		required: true,
 		unique: true,
 	},
+	img: {
+		type: String,
+	},
     },
     {
         timestamps:true,
