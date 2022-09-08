@@ -45,11 +45,11 @@ const createTourPackages = async (req, res) => {
 
 const UpdateTourPackages = async (req, res) => {
     const { id } = req.params;
-    const { title,description,topic } = req.body;
+    const { title,description,topic , img} = req.body;
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No accept with id: ${id}`);
 
-    const updatedTopic = {title:title,description:description,topic:topic , _id: id };
+    const updatedTopic = {title:title,description:description,topic:topic ,img:img, _id: id };
 
     await TourPackages.findByIdAndUpdate(id, updatedTopic, { new: true });
 
