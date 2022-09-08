@@ -37,7 +37,9 @@ mongoose.connect(
 );
 
 //import routes
-const TourPackagesRouter = require("./routes/TourPackagesRoutes");
+const TourPackagesRouter = require('./routes/TourPackagesRoutes');
+const BlogsRouter = require('./routes/blogsRouter');
 
 //use routes
-app.use("/travelgo",TourPackagesRouter);
+app.use('/travelgo', TourPackagesRouter);
+app.use('/blogs', BlogsRouter);
