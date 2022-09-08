@@ -38,40 +38,31 @@ mongoose.connect(
 
 //import routes
 
-
-
-const TourPackagesRouter = require("./routes/TourPackagesRoutes");
-
-const HotelPackagesRouter = require("./routes/HotelPackagesRoutes");
-const HotelReservationsRouter = require("./routes/HotelReservationRoutes");
-
-//use routes
-app.use("/travelgo",TourPackagesRouter);
-app.use("/travelgo/packages",HotelPackagesRouter);
-app.use("/travelgo",HotelReservationsRouter);
-
-
-
-const UserRoutes = require("./routes/UserRoutes");
-
-//use routes
-app.use("/travelgo",TourPackagesRouter);
-app.use("/travelgo/user",UserRoutes);
-
-
 const TourPackagesRouter = require('./routes/TourPackagesRoutes');
+
+const HotelPackagesRouter = require('./routes/HotelPackagesRoutes');
+const HotelReservationsRouter = require('./routes/HotelReservationRoutes');
+
+//use routes
+
 const UserRoutes = require('./routes/UserRoutes');
+
+//use routes
+app.use('/travelgo', TourPackagesRouter);
+app.use('/travelgo/user', UserRoutes);
+
+//const TourPackagesRouter = require('./routes/TourPackagesRoutes');
+//const UserRoutes = require('./routes/UserRoutes');
 const BlogsRouter = require('./routes/blogsRouter');
 
 //use routes
 app.use('/travelgo', TourPackagesRouter);
 app.use('/travelgo/user', UserRoutes);
 app.use('/blogs', BlogsRouter);
-
+app.use('/travelgo', TourPackagesRouter);
+app.use('/travelgo/packages', HotelPackagesRouter);
+app.use('/travelgo', HotelReservationsRouter);
 
 // //use routes
 // app.use('/travelgo', TourPackagesRouter);
 // app.use('/blogs', BlogsRouter);
-
-
-
