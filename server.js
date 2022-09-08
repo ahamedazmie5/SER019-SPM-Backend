@@ -18,7 +18,7 @@ app.use(
   })
 );
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () =>
   console.log(`Server successfully  started on : ${PORT}`)
@@ -39,6 +39,12 @@ mongoose.connect(
 //import routes
 const TourPackagesRouter = require("./routes/TourPackagesRoutes");
 const HotelPackagesRouter = require("./routes/HotelPackagesRoutes");
+const HotelReservationsRouter = require("./routes/HotelReservationRoutes");
+
 //use routes
 app.use("/travelgo",TourPackagesRouter);
-app.use("/travelgo",HotelPackagesRouter);
+app.use("/travelgo/packages",HotelPackagesRouter);
+app.use("/travelgo",HotelReservationsRouter);
+
+
+

@@ -45,11 +45,11 @@ const createHotelPackages = async (req, res) => {
 
 const UpdateHotelPackages = async (req, res) => {
     const { id } = req.params;
-    const { Hotel_Name,Single_Room_Price,Double_Room_Price,Luxury_Room_Price,Hotel_Contact,Location } = req.body;
+    const { Hotel_ID,Hotel_Name,Single_Room_Price,Double_Room_Price,Luxury_Room_Price,Hotel_Contact,Location } = req.body;
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No accept with id: ${id}`);
 
-    const updatedDetails = {Hotel_Name:Hotel_Name,Single_Room_Price:Single_Room_Price,Double_Room_Price:Double_Room_Price,Luxury_Room_Price:Luxury_Room_Price,Hotel_Contact:Hotel_Contact,Location:Location , _id: id };
+    const updatedDetails = {Hotel_ID:Hotel_ID,Hotel_Name:Hotel_Name,Single_Room_Price:Single_Room_Price,Double_Room_Price:Double_Room_Price,Luxury_Room_Price:Luxury_Room_Price,Hotel_Contact:Hotel_Contact,Location:Location , _id: id };
 
     await HotelPackages.findByIdAndUpdate(id, updatedDetails, { new: true });
 

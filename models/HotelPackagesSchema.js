@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const HotelPackagesSchema = new mongoose.Schema({
+	Hotel_ID: {
+		type: String,
+		required: true,
+	},
 	Hotel_Name: {
 		type: String,
 		required: true,
@@ -33,3 +37,5 @@ const HotelPackagesSchema = new mongoose.Schema({
 );
 
 module.exports = User = mongoose.model("hotelpackages", HotelPackagesSchema);
+
+
