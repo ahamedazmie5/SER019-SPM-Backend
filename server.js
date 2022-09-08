@@ -38,6 +38,8 @@ mongoose.connect(
 
 //import routes
 const TourPackagesRouter = require("./routes/TourPackagesRoutes");
+const UserRoutes = require("./routes/UserRoutes");
 
 //use routes
 app.use("/travelgo",TourPackagesRouter);
+app.use("/travelgo/user",UserRoutes);
