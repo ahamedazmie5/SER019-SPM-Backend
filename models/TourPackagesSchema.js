@@ -12,7 +12,7 @@ const TourPackagesSchema = new mongoose.Schema({
 	topic: {
 		type: String,
 		required: true,
-		unique: true,
+		
 	},
 	img: {
 		type: String,
