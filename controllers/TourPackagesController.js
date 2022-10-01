@@ -57,5 +57,18 @@ const UpdateTourPackages = async (req, res) => {
 }
 
 
+const Removerpackage  = async (req,res) => {
+   
 
-module.exports = { getTourPackagesById, getTourPackages, createTourPackages, UpdateTourPackages };
+    const { id } = req.params;
+  
+    let data = await TourPackages.findByIdAndRemove(id);
+  
+    res.json({data:data, msg:"delete success"});
+  
+  
+}
+
+
+
+module.exports = { getTourPackagesById, getTourPackages, createTourPackages, UpdateTourPackages,Removerpackage };

@@ -45,14 +45,20 @@ const HotelReservationsRouter = require('./routes/HotelReservationRoutes');
 
 //use routes
 
+app.use('/travelgo/packages', HotelPackagesRouter);
+app.use('/travelgo', HotelReservationsRouter);
+
 const UserRoutes = require('./routes/UserRoutes');
 
 //use routes
 app.use('/travelgo', TourPackagesRouter);
-app.use('/travelgo/user', UserRoutes);
+//app.use('/travelgo/user', UserRoutes);
 
 //const TourPackagesRouter = require('./routes/TourPackagesRoutes');
 //const UserRoutes = require('./routes/UserRoutes');
+
+app.use('/travelgo/user', UserRoutes);
+app.use('/travelgo', require('./routes/TourPackagesRoutes'));
 
 //const TourPackagesRouter = require('./routes/TourPackagesRoutes');
 

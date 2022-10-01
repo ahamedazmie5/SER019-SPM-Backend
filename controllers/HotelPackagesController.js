@@ -58,4 +58,6 @@ const UpdateHotelPackages = async (req, res) => {
 
 
 
+
+
 module.exports = { getHotelPackagesByID, getHotelPackages, createHotelPackages, UpdateHotelPackages };
