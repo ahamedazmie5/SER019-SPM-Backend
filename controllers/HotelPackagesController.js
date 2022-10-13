@@ -56,6 +56,12 @@ const UpdateHotelPackages = async (req, res) => {
     res.json(updatedDetails);
 }
 
+const RemoveHotelPackages = async (req, res) => {
+    const { id } = req.params;
 
+    let data = await HotelPackages.findByIdAndRemove(id);
 
-module.exports = { getHotelPackagesByID, getHotelPackages, createHotelPackages, UpdateHotelPackages };
+    res.json({data:data, msg:"delete success"});
+}
+
+module.exports = { getHotelPackagesByID, getHotelPackages, createHotelPackages, UpdateHotelPackages, RemoveHotelPackages };
