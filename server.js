@@ -1,8 +1,8 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 dotenv.config();
 
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ['http://localhost:3000'],
+    origin: ["http://localhost:3000"],
     credentials: true,
   })
 );
@@ -32,13 +32,11 @@ mongoose.connect(
   },
   (err) => {
     if (err) return console.error(err);
-    console.log('Successfully Connected to MongoDB');
+    console.log("Successfully Connected to MongoDB");
   }
 );
 
 //import routes
-
-
 
 const TourPackagesRouter = require("./routes/TourPackagesRoutes");
 
@@ -47,31 +45,20 @@ const HotelReservationsRouter = require("./routes/HotelReservationRoutes");
 
 //use routes
 
-app.use("/travelgo/packages",HotelPackagesRouter);
-app.use("/travelgo",HotelReservationsRouter);
-
-
-
-const UserRoutes = require("./routes/UserRoutes");
+app.use("/travelgo/packages", HotelPackagesRouter);
+app.use("/travelgo", HotelReservationsRouter);
 
 //use routes
 
-app.use("/travelgo/user",UserRoutes);
 app.use("/travelgo", require("./routes/TourPackagesRoutes"));
 
-
-
-const BlogsRouter = require('./routes/blogsRouter');
+const BlogsRouter = require("./routes/blogsRouter");
 
 //use routes
-app.use('/travelgo', TourPackagesRouter);
-app.use('/travelgo/user', UserRoutes);
-app.use('/blogs', BlogsRouter);
+app.use("/travelgo", TourPackagesRouter);
 
-
+app.use("/blogs", BlogsRouter);
+app.use("/user", require("./routes/Userroutes"));
 // //use routes
 // app.use('/travelgo', TourPackagesRouter);
 // app.use('/blogs', BlogsRouter);
-
-
-
