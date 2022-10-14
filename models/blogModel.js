@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema(
   {
+    img: {
+      type: String,
+    },
     title: {
       type: String,
       required: true,
