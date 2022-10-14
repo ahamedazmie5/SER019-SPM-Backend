@@ -46,7 +46,7 @@ const HotelReservationsRouter = require("./routes/HotelReservationRoutes");
 //use routes
 
 app.use("/travelgo/packages", HotelPackagesRouter);
-app.use("/travelgo", HotelReservationsRouter);
+app.use("/travelgo/packages", HotelReservationsRouter);
 
 //use routes
 

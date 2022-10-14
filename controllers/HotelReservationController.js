@@ -56,7 +56,13 @@ const UpdateHotelReservation = async (req, res) => {
     res.json(updatedDetails);
 }
 
+const RemoveHotelReservation = async (req, res) => {
+    const { id } = req.params;
 
+    let data = await HotelReservations.findByIdAndRemove(id);
 
-module.exports = { getReservation, getReservationByID, createHotelReservation, UpdateHotelReservation };
+    res.json({data:data, msg:"delete success"});
+}
+
+module.exports = { getReservation, getReservationByID, createHotelReservation, UpdateHotelReservation, RemoveHotelReservation};
 
